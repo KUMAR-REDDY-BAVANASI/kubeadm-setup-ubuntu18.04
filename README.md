@@ -18,13 +18,13 @@ Steps to Install Kubernetes on Ubuntu
 =====================================
 Step 1: Install Docker
 ----------------------
-```sudo apt-get install docker.io -y
+`sudo apt-get install docker.io -y
 
 sudo systemctl enable docker
 
 sudo systemctl start docker
 
-sudo apt update```
+sudo apt update`
 
 Install Kubernetes
 Step 2: Add Kubernetes Signing Key
