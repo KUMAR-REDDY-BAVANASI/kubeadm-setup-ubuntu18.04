@@ -16,8 +16,11 @@ Steps to Install Kubernetes on Ubuntu
 Step 1: Install Docker
 ----------------------
 sudo apt-get install docker.io -y
+
 sudo systemctl enable docker
+
 sudo systemctl start docker
+
 sudo apt update
 
 Install Kubernetes
@@ -34,6 +37,7 @@ sudo apt-add-repository "deb http://apt.kubernetes.io/ kubernetes-xenial main"
 Step 4: Kubernetes Installation Tools
 ---------------------------------------
 sudo apt-get install kubeadm kubelet kubectl -y
+
 sudo apt-mark hold kubeadm kubelet kubectl
 
                    [OR]
@@ -52,6 +56,7 @@ Step 5: Begin Kubernetes Deployment
 Start by disabling the swap memory on each server
 ---------------------------------------------------
 sudo swapoff -a
+
 sudo sed -i '/ swap / s/^/#/' /etc/fstab
 
 
@@ -86,7 +91,9 @@ cat > /etc/docker/daemon.json <<EOF
 EOF
 
 mkdir -p /etc/systemd/system/docker.service.d
+
 systemctl daemon-reload
+
 systemctl restart docker
 
 kubeadm reset 
@@ -97,7 +104,9 @@ kubeadm reset
 sudo kubeadm init --pod-network-cidr=10.244.0.0/16 --ignore-preflight-errors all
 
 mkdir -p $HOME/.kube
+
 sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+
 sudo chown $(id -u):$(id -g) $HOME/.kube/config
 
 
@@ -132,7 +141,6 @@ Step 10: Switch to master node and enter
 ----------------------------------------
 
 kubectl get nodes
-
 
 
 
