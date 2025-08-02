@@ -145,6 +145,9 @@ To destroy kubeadm setup:
 -------------------------
 
 kubeadm reset -y
+
 sudo apt-get purge kubeadm kubectl kubelet kubernetes-cni kube* -y
+
 sudo apt-get autoremove -y
+
 sudo rm -rf ~/.kube
