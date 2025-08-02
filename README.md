@@ -6,8 +6,11 @@ Kubernetes is an open source platform for managing container technologies such a
 Prerequisites
 =============
 2 or more Linux servers running Ubuntu 18.04
+
 Access to a user account on each system with sudo or root privileges
+
 The apt package manager, included by default
+
 Command-line/terminal window (Ctrl–Alt–T)
 
 
