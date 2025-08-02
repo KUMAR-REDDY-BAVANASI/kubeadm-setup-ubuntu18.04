@@ -136,6 +136,7 @@ kubectl get nodes
 ```
 
 **Cleanup:**
+
 To destroy/cleanup kubeadm setup:
 ```bash
 kubeadm reset -y
