@@ -47,7 +47,9 @@ curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add
 
 
 **Kubernetes Deployment**
+
 Step 5: Begin Kubernetes Deployment
+
 Start by disabling the swap memory on each server
 ```bash
 sudo swapoff -a
