@@ -37,7 +37,6 @@ sudo apt-mark hold kubeadm kubelet kubectl
 [OR]
 
 Specific version:
------------------
 ```bash
 curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add - && \
   echo "deb http://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee /etc/apt/sources.list.d/kubernetes.list && \
@@ -94,9 +93,7 @@ systemctl restart docker
 kubeadm reset 
 ```
 
----------------------------------------------------------------------------------------------------------
-
-
+Initialize Kubernetes on Master Node If kubelet healthy
 ```bash
 sudo kubeadm init --pod-network-cidr=10.244.0.0/16 --ignore-preflight-errors all
 mkdir -p $HOME/.kube
@@ -106,12 +103,12 @@ sudo chown $(id -u):$(id -g) $HOME/.kube/config
 
 Step 8: Deploy Pod Network to Cluster:
 
-                      **[CALICO NETWORK PLUGIN]**
+[CALICO NETWORK PLUGIN]
 ```bash
 kubectl apply -f https://docs.projectcalico.org/manifests/calico.yaml
 ```
 
-                      **[FLANNEL NETWORK PLUGIN]**
+[FLANNEL NETWORK PLUGIN]
 ```bash
 sudo kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml
 ```
@@ -138,9 +135,7 @@ Step 10: Switch to master node and enter
 kubectl get nodes
 ```
 
-
-Note:
------
+**Cleanup:**
 To destroy/cleanup kubeadm setup:
 ```bash
 kubeadm reset -y
