@@ -2,7 +2,7 @@
 
 Kubernetes is an open source platform for managing container technologies such as Docker
 
-### ** Prerequisites:**
+### **Prerequisites:**
 * 2 or more Linux servers running Ubuntu 18.04
 * Access to a user account on each system with sudo or root privileges
 * The apt package manager, included by default
@@ -19,19 +19,16 @@ sudo apt update
 
 Install Kubernetes
 Step 2: Add Kubernetes Signing Key
---------------------------------------
 ```bash
 curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add
 ```
 
 Step 3: Add Software Repositories:
-----------------------------------
 ```bash
 sudo apt-add-repository "deb http://apt.kubernetes.io/ kubernetes-xenial main"
 ```
 
 Step 4: Kubernetes Installation Tools
----------------------------------------
 ```bash
 sudo apt-get install kubeadm kubelet kubectl -y
 sudo apt-mark hold kubeadm kubelet kubectl
@@ -49,7 +46,7 @@ curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add
 ```
 
 
-Kubernetes Deployment
+**Kubernetes Deployment**
 Step 5: Begin Kubernetes Deployment
 Start by disabling the swap memory on each server
 ```bash
